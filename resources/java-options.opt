@@ -4,6 +4,7 @@
 #
 # use:
 #  java @resources/java-options.opt application.Application
+#  java @resources/java-options.opt application.Application_C3
 #
 
---module-path="bin" --add-modules="se1.bestellsystem"
+--module-path="bin;lib" --add-modules="se1.bestellsystem"

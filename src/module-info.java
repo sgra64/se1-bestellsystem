@@ -13,4 +13,7 @@
 module se1.bestellsystem {
 	opens application;
 	exports datamodel;
+
+	requires junit;
+	requires org.junit.jupiter.api;
 }
