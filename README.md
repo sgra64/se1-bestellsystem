@@ -1,6 +1,8 @@
-### se1-bestellsystem
+# se1-bestellsystem
 
-##### Project branch structure:
+Simple simple order processing application.
+
+### Project branch structure:
 
 ```
 <branches>
@@ -12,7 +14,7 @@
     +--dev - current development branch
 ```
 
-##### Running stand alone commands:
+### Running stand alone commands:
 
 Run Java from project directory:
 
@@ -34,7 +36,7 @@ java @resources/junit-options.opt --scan-class-path
 java @resources/junit-options.opt `cat resources/junit-classes_C4.opt`
 ```
 
-##### .lib
+### .lib
 Running javadoc with JUnit5 required in *module-info.java* and running stand-alone
 JUnit tests with junit-standalone runner, assumes *./lib* package in the
 project directory with:
