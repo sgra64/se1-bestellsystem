@@ -15,31 +15,32 @@ public class OrderItem {
 //    }
 
     /**
-     * ordered from catalog, must not be null
+     * Ordered article, is never null.
      */
     private final Article article;
 
     /**
-     * number of units ordered, must be a positive number {@code > 0}.
-     * @throws IllegalArgumentException if article is null or units not a positive {@code units >0} number.
+     * Number of units ordered, is always a positive number {@code > 0}.
      */
     private int unitsOrdered;
 
 
-
-
     /**
      * Constructor of ordered line item with article and units arguments.
+     * 
      * @param article ordered article, throws IllegalArgumentException if article is null
      * @param unitsOrdered number of articles ordered
      */
     protected OrderItem(Article article, int unitsOrdered) {
         // TODO implement here
     	this.article = article;
+    	this.unitsOrdered = unitsOrdered;
     }
+
 
     /**
      * Article getter.
+     * 
      * @return ordered article.
      */
     public Article getArticle() {
@@ -47,8 +48,10 @@ public class OrderItem {
         return null;
     }
 
+
     /**
      * UnitsOrdered getter.
+     * 
      * @return number of article ordered.
      */
     public int getUnitsOrdered() {
@@ -56,8 +59,10 @@ public class OrderItem {
         return 0;
     }
 
+
     /**
      * UnitsOrdered setter.
+     * 
      * @param units units updated number of articles ordered, must be {@code >= 0}.
      * @throws IllegalArgumentException if units not a positive {@code units >0} number.
      */

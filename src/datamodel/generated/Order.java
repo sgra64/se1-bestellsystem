@@ -40,20 +40,29 @@ public class Order {
     private final List<OrderItem> items;
 
 
+//    /**
+//     * 
+//     */
+//    public Customer owns;
+
+
     /**
-     * Constructor with customer owning the order .
+     * Constructor with customer owning the order.
+     * 
      * @param customer customer as owner of order, customer who placed that order.
      * @throws IllegalArgumentException when customer argument is null or has invalid id.
      */
     public Order(Customer customer) {
-        this.customer = customer;
-        this.creationDate = new Date();
-        this.items = new ArrayList<>();
+        // TODO implement here
+    	this.customer = customer;
+    	this.creationDate = new Date();
+    	this.items = new ArrayList<>();
     }
 
 
     /**
      * Id getter.
+     * 
      * @return order id, returns {@code null}, if id is unassigned.
      */
     public String getId() {
@@ -64,6 +73,7 @@ public class Order {
 
     /**
      * Id setter. Id can only be set once with valid id, id is immutable after assignment.
+     * 
      * @param id only valid id (not null or "") updates id attribute on first invocation.
      * @throws IllegalArgumentException if id argument is invalid ({@code id==null} or {@code id==""}).
      * 
@@ -77,6 +87,7 @@ public class Order {
 
     /**
      * Customer getter.
+     * 
      * @return owning customer, cannot be null.
      */
     public Customer getCustomer() {
@@ -87,6 +98,7 @@ public class Order {
 
     /**
      * CreationDate getter, returns the time/date when the order was created.
+     * 
      * @return time/date when order was created as long in ms since 01/01/1970.
      */
     public long getCreationDate() {
@@ -98,6 +110,7 @@ public class Order {
     /**
      * CreationDate setter for date/time, which is valid for {@code 01/01/2020 <= datetime <= now() + 1day}.
      * Orders cannot be older than the lower bound and younger than the current datetime (+1day).
+     * 
      * @param datetime time/date when order was created (in milliseconds since 01/01/1970).
      * @throws IllegalArgumentException if datetime is outside valid range {@code 01/01/2020 <= datetime <= now() + 1day}.
      * @return chainable self-reference.
@@ -110,6 +123,7 @@ public class Order {
 
     /**
      * Number of items that are part of the order.
+     * 
      * @return number of ordered items.
      */
     public int itemsCount() {
@@ -120,6 +134,7 @@ public class Order {
 
     /**
      * Ordered items getter.
+     * 
      * @return ordered items.
      */
     public Iterable<OrderItem> getItems() {
@@ -130,6 +145,7 @@ public class Order {
 
     /**
      * Create new item and add to order.
+     * 
      * @param article article ordered from catalog.
      * @param units units ordered.
      * @throws IllegalArgumentException if article is null or units not a positive {@code units > 0} number.
@@ -143,22 +159,19 @@ public class Order {
 
     /**
      * Delete i-th item from order, {@code i >= 0 && i < items.size()}, otherwise method has no effect.
+     * 
      * @param i index of item to delete, only a valid index deletes item.
-     * @return
      */
     public void deleteItem(int i) {
         // TODO implement here
-//        return null;
     }
 
 
     /**
      * Delete all ordered items.
-     * @return
      */
     public void deleteAllItems() {
         // TODO implement here
-//        return null;
     }
 
 }
