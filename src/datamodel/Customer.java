@@ -3,7 +3,7 @@ package datamodel;
 import java.util.*;
 
 /**
- * Class for entity type <i>Customer</i>.
+ * Class of entity type <i>Customer</i>.
  * <p>
  * Customer is an individual (a person, not a business) who creates and holds (owns) orders in the system.
  * </p>
