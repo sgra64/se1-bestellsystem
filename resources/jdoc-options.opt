@@ -5,6 +5,7 @@
 #  -version		- include version tag
 #  -private		- include private classes
 # --show-members public	- include only public member fields and methods
+#  -noqualifier "java.lang:java.io:java.util" - don't use fully qualified package names in javadocs
 #
 # use:
 #  javadoc @resources/jdoc-options.opt application datamodel
@@ -15,4 +16,4 @@
 #  https://docs.oracle.com/javase/9/javadoc/javadoc-command.htm
 #
 
---source-path "src" --module-path "lib" -d doc -version -author
+--source-path "src" --module-path "lib" -d doc -version -author -noqualifier "java.*"
