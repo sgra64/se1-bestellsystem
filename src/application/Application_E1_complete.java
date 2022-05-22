@@ -914,55 +914,6 @@ public class Application_E1_complete {
 
 
 	/**
-	 * Interface of TablePrinter instance.
-	 *
-	 */
-	interface TablePrinter {
-
-		/**
-		 * Builder interface for constructing TablePrinter instances.
-		 */
-		interface Builder {		// to define table columns
-			Builder column(String spec, int width);
-		}
-
-		/**
-		 * Insert horizontal line into table.
-		 * 
-		 * @return chainable self-reference.
-		 */
-		TablePrinter line();
-
-		/**
-		 * Insert line spec pattern "  |.|+| |" with "|" vertical bar and
-		 * fill characters.
-		 * <pre>
-		 * |.....|+++++|       |
-		 * </pre>
-		 * 
-		 * @param spec spec String.
-		 * @return chainable self-reference.
-		 */
-		TablePrinter line(String spec);
-
-		/**
-		 * Insert content line with arg[i] for column[i].
-		 * 
-		 * @param args content line as varargs with arg[i] for column[i].
-		 * @return chainable self-reference.
-		 */
-		TablePrinter row(String... args);
-
-		/**
-		 * Output table to PrintStream.
-		 * 
-		 * @param ps output destination.
-		 */
-		void print(PrintStream ps);
-	}
-
-
-	/**
 	 * Class that implements the TablePrinter interface of a table comprised of
 	 * columns defined by {@code width(number)}, alignment: {@code 'L'} for left
 	 * and {@code 'R'} for right alignment, and a fill character (default is space).
