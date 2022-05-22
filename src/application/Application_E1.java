@@ -258,7 +258,7 @@ public class Application_E1 {
 		int osz = orders.size();
 		
 		/*
-		 * TODO: add new articles, orders, customers accroding to assignment.
+		 * TODO: E1(4) add new articles, orders, customers accroding to assignment.
 		 */
 		Article pfanne = new Article("Pfanne", 4999).setId("SKU-300926");
 		//
@@ -519,7 +519,7 @@ public class Application_E1 {
 		//
 		if(orderTable != null && order != null) {
 			/*
-			 * TODO: implement/change logic to extract items from order, calculate values and
+			 * TODO: E1(3) implement/change logic to extract items from order, calculate values
 			 * and fill them into table rows. Code should produce correct table for any order.
 			 * 
 			 * Current code produces (should produce what is shown in javadoc):
@@ -576,7 +576,7 @@ public class Application_E1 {
 		};
 		//
 		/*
-		 * TODO: implement/change logic.
+		 * TODO: E1(5) implement/change logic.
 		 */
 		printOrder(orderTable, o8592).line();
 		printOrder(orderTable, o8592).line();
@@ -622,7 +622,7 @@ public class Application_E1 {
 	 */
 	public long calculateIncludedVAT(long grossValue, TAX tax) {
 		/*
-		 * TODO: implement formula to calculate included VAT tax.
+		 * TODO: E1(2) implement formula to calculate included VAT tax.
 		 */
 		long vat = 0;
 		return vat;

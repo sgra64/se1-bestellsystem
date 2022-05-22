@@ -10,8 +10,11 @@ Simple simple order processing application.
 +--main - branch with src/Application.java
     |
     +--C1 - C1234 with datamodel.Customer.java + JUnit tests
+    |   |
+    |  DE - D12, E1 full datamodel and OrderTable
     |
     +--dev - current development branch
+    
 ```
 
 ### Running stand alone commands:
