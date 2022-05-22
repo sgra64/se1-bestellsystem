@@ -631,6 +631,45 @@ public class Application_E1_complete {
 
 
 	/**
+	 * Applicable tax rate mapped from TAX enum.
+	 */
+	private final Map<TAX, Double> taxRateMapper = Map.of(
+		TAX.TAXFREE,			 0.0,	// tax free rate
+		TAX.GER_VAT,			19.0,	// German VAT tax (MwSt) 19.0%
+		TAX.GER_VAT_REDUCED,	 7.0	// German reduced VAT tax (MwSt) 7.0%
+	);
+
+
+	/**
+	 * Get percent tax rate from enum value.
+	 * 
+	 * @param taxRate enum value of applicable tax rate.
+	 * @return tax rate in percent.
+	 */
+	public double getTaxRate(TAX taxRate) {
+		return taxRate != null? taxRateMapper.get(taxRate) : 0.0;
+	}
+
+
+	/**
+	 * Calculate included VAT tax from gross price/value based on specific
+	 * tax rate (VAT is value-added tax, in Germany it is called
+	 * <i>"Mehrwertsteuer" (MwSt.)</i>).
+	 * 
+	 * @param grossValue value that included tax.
+	 * @param tax applicable tax rate.
+	 * @return tax included in gross value based on tax rate.
+	 */
+	public long calculateIncludedVAT(long grossValue, TAX tax) {
+		double taxRate = getTaxRate(tax) / 100.0;
+		double vat_double = grossValue * taxRate / (1.0 + taxRate);
+		double vat_rounded = Math.round(vat_double);
+		long vat = Double.valueOf(vat_rounded).longValue();
+		return vat;
+	}
+
+
+	/**
 	 * Calculate compounded value and VAT tax over all order items.
 	 * 
 	 * @param order order to calculate compounded value and VAT tax.
@@ -651,21 +690,20 @@ public class Application_E1_complete {
 
 
 	/**
-	 * Calculate included VAT tax from gross price/value based on specific
-	 * tax rate (VAT is value-added tax, in Germany it is called
-	 * <i>"Mehrwertsteuer" (MwSt.)</i>).
-	 * 
-	 * @param grossValue value that included tax.
-	 * @param tax applicable tax rate.
-	 * @return tax included in gross value based on tax rate.
+	 * Currency symbols defined by ASCII/Unicode-Strings mapped from Currency enum.
 	 */
-	public long calculateIncludedVAT(long grossValue, TAX tax) {
-		double taxRate = getTaxRate(tax) / 100.0;
-		double vat_double = grossValue * taxRate / (1.0 + taxRate);
-		double vat_rounded = Math.round(vat_double);
-		long vat = Double.valueOf(vat_rounded).longValue();
-		return vat;
-	}
+	final Map<Currency, String> CurrencySymbol = Map.of(
+		Currency.EUR, "\u20ac",		// Unicode: EURO
+		Currency.USD, "$",			// ASCII: US Dollar
+		Currency.GBP, "\u00A3",		// Unicode: UK Pound Sterling
+		Currency.YEN, "\u00A5",		// Unicode: Japanese Yen
+		Currency.BTC, "BTC"			// no Unicode for Bitcoin
+	);
+
+	/**
+	 * EUR currency symbol.
+	 */
+	final String EUR = CurrencySymbol.get(Currency.EUR);
 
 
 	/**
@@ -795,44 +833,6 @@ public class Application_E1_complete {
 		}
 		return datetimeStr;
 	}
-
-
-	/**
-	 * Applicable tax rate mapped from TAX enum.
-	 */
-	private final Map<TAX, Double> taxRateMapper = Map.of(
-		TAX.TAXFREE,			 0.0,	// tax free rate
-		TAX.GER_VAT,			19.0,	// German VAT tax (MwSt) 19.0%
-		TAX.GER_VAT_REDUCED,	 7.0	// German reduced VAT tax (MwSt) 7.0%
-	);
-
-
-	/**
-	 * Get percent tax rate from enum value.
-	 * 
-	 * @param taxRate enum value of applicable tax rate.
-	 * @return tax rate in percent.
-	 */
-	public double getTaxRate(TAX taxRate) {
-		return taxRate != null? taxRateMapper.get(taxRate) : 0.0;
-	}
-
-
-	/**
-	 * Currency symbols defined by ASCII/Unicode-Strings mapped from Currency enum.
-	 */
-	final Map<Currency, String> CurrencySymbol = Map.of(
-		Currency.EUR, "\u20ac",		// Unicode: EURO
-		Currency.USD, "$",			// ASCII: US Dollar
-		Currency.GBP, "\u00A3",		// Unicode: UK Pound Sterling
-		Currency.YEN, "\u00A5",		// Unicode: Japanese Yen
-		Currency.BTC, "BTC"			// no Unicode for Bitcoin
-	);
-
-	/**
-	 * EUR currency symbol.
-	 */
-	final String EUR = CurrencySymbol.get(Currency.EUR);
 
 
 	/**
