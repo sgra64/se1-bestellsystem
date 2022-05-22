@@ -63,7 +63,7 @@ public class Customer {
      * Id setter. Id can only be set once with valid id, id is immutable after assignment.
      * 
      * @param id value to assign if this.id attribute is still unassigned {@code id < 0} and id argument is valid.
-     * @throws IllegalArgumentException if igt logd argument is invalid ({@code id < 0}).
+     * @throws IllegalArgumentException if id argument is invalid ({@code id < 0}).
      * @return chainable self-reference.
      */
     public Customer setId(long id) {
