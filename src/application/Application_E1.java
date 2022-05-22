@@ -607,7 +607,7 @@ public class Application_E1 {
 	 * @param taxRate enum value of applicable tax rate.
 	 * @return tax rate in percent.
 	 */
-	public double getTaxRate(TAX taxRate) {
+	public double getTaxRate(final TAX taxRate) {
 		return taxRate != null? taxRateMapper.get(taxRate) : 0.0;
 	}
 
@@ -621,7 +621,7 @@ public class Application_E1 {
 	 * @param tax applicable tax rate.
 	 * @return tax included in gross value based on tax rate.
 	 */
-	public long calculateIncludedVAT(long grossValue, TAX tax) {
+	public long calculateIncludedVAT(final long grossValue, final TAX tax) {
 		/*
 		 * TODO: E1(2) implement formula to calculate included VAT tax.
 		 */
@@ -834,7 +834,7 @@ public class Application_E1 {
 	 * @param unit appended unit as String.
 	 * @return formatted decimal value as String.
 	 */
-	public String fmtDecimal(long value, final int decimalDigits, final String... unit) {
+	public String fmtDecimal(final long value, final int decimalDigits, final String... unit) {
 		final String unitStr = unit.length > 0? unit[0] : null;
 		final Object[][] dec = {
 			{      "%,d", 1L },		// no decimal digits:  16,000Y
