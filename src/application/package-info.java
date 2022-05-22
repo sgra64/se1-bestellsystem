@@ -13,5 +13,5 @@ package application;
 class package_info {
 	static final String RootName = "se1.bestellsystem";
 	static final String Author = "sgra64";
-	static final String Version = "1.0.0-SNAPSHOT-dev";
+	static final String Version = "1.0.0-SNAPSHOT-DE";
 }
