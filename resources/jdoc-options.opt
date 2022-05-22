@@ -16,4 +16,4 @@
 #  https://docs.oracle.com/javase/9/javadoc/javadoc-command.htm
 #
 
---source-path "src" --module-path "lib" -d doc -version -author -noqualifier "java.*"
+--source-path "src" --module-path "lib" -d doc -version -author -noqualifier "java.*:application.*"
