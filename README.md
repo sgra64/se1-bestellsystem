@@ -12,6 +12,8 @@ Simple simple order processing application.
     +--C1 - C1234 with datamodel.Customer.java + JUnit tests
     |   |
     |  DE - D12, E1 full datamodel and OrderTable
+    |   |
+    |   F - Refactoring with system package
     |
     +--dev - current development branch
     

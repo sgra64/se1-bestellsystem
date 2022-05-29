@@ -13,5 +13,9 @@
 #		--select-package com.javabydeveloper.util
 #		--select-class datamodel.Customer_100_ConstructorTest
 #
+# Intellij uses 'out' as default output folder, not 'bin'
+# use `find out` to see class paths and adjust --class-path accordingly
+# --class-path out/se1-bestellsystem/production:out/se1-bestellsystem/test
+#
 
 -jar lib/runner/junit-platform-console-standalone-1.8.2.jar --class-path bin

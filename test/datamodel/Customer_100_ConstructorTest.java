@@ -87,6 +87,7 @@ public class Customer_100_ConstructorTest {
 	void test104_ChainableSetters() {
 		final Customer c1 = new Customer();
 		assertSame(c1, c1.setId(0L));	// setter must return same object reference
+		assertSame(c1, c1.setId(0L));	// also with repeated attempt (has been a case...)
 		assertSame(c1, c1.setName(""));
 		assertSame(c1, c1.setName("",""));
 		assertSame(c1, c1.addContact("eric@gmail.com"));
