@@ -19,7 +19,7 @@ public interface Calculator {
 	 * @param taxRate enum value of applicable tax rate.
 	 * @return tax rate in percent.
 	 */
-	double getTaxRate(final TAX taxRate);
+	double getTaxRate(TAX taxRate);
 
 	/**
 	 * Calculate included VAT tax from gross price/value based on specific
@@ -30,7 +30,7 @@ public interface Calculator {
 	 * @param tax applicable tax rate.
 	 * @return tax included in gross value based on tax rate.
 	 */
-	long calculateIncludedVAT(final long grossValue, final TAX tax);
+	long calculateIncludedVAT(long grossValue, TAX tax);
 
 	/**
 	 * Calculate compounded value and VAT tax over all order items.
@@ -38,6 +38,6 @@ public interface Calculator {
 	 * @param order order to calculate compounded value and VAT tax.
 	 * @return tuple with compounded value and VAT tax of order items.
 	 */
-	public long[] calculateValueAndTax(final Order order);
+	public long[] calculateValueAndTax(Order order);
 
 }

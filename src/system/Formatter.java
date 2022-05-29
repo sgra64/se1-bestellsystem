@@ -27,7 +27,7 @@ public interface Formatter {
 	 * @param style name formatting style.
 	 * @return formatted name according to style.
 	 */
-	public String fmtName(final String firstName, final String lastName, final int... style);
+	public String fmtName(String firstName, String lastName, int... style);
 
 
 	/**
@@ -63,7 +63,7 @@ public interface Formatter {
 	 * @param timeStyle time formatting style ({@code 0} is default).
 	 * @return formatted date or time according to style.
 	 */
-	public String fmtDate(final long datetime, final int dateStyle, final String fill, final int... timeStyle);
+	public String fmtDate(long datetime, int dateStyle, String fill, int... timeStyle);
 
 
 	/**
@@ -82,7 +82,7 @@ public interface Formatter {
 	 * @param style price formatting style.
 	 * @return formatted price according to style.
 	 */
-	public String fmtPrice(final long price, final int... style);
+	public String fmtPrice(long price, int... style);
 
 
 	/**
@@ -94,6 +94,6 @@ public interface Formatter {
 	 * @param unit appended unit as String.
 	 * @return formatted decimal value as String.
 	 */
-	public String fmtDecimal(final long value, final int decimalDigits, final String... unit);
+	public String fmtDecimal(long value, int decimalDigits, String... unit);
 
 }

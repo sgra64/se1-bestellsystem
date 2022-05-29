@@ -3,7 +3,6 @@ package system;
 import java.util.Collection;
 import java.util.function.Consumer;
 
-import application.TablePrinter;
 import datamodel.Customer;
 import datamodel.Article;
 import datamodel.Order;
@@ -36,10 +35,10 @@ public interface Printer {
 	 * </pre>
 	 * 
 	 * @param sb StringBuffer that will contains the formatted result. A new StringBuffer is created when sb is null.
-	 * @param c Customer object.
+	 * @param customer Customer object.
 	 * @return StringBuffer that contains formatted result (same sb).
 	 */
-	public StringBuffer printCustomer(final StringBuffer sb, final Customer c);
+	public StringBuffer printCustomer(StringBuffer sb, Customer customer);
 
 
 	/**
@@ -55,7 +54,7 @@ public interface Printer {
 	 * @param customers collection of Customers (null argument is ignored).
 	 * @return StringBuffer that contains formatted result (same sb).
 	 */
-	public StringBuffer printCustomers(final StringBuffer sb, final Collection<Customer> customers);
+	public StringBuffer printCustomers(StringBuffer sb, Collection<Customer> customers);
 
 
 	/**
@@ -66,10 +65,10 @@ public interface Printer {
 	 * </pre>
 	 * 
 	 * @param sb StringBuffer that will contains the formatted result. A new StringBuffer is created when sb is null.
-	 * @param a Article object
+	 * @param article Article object
 	 * @return StringBuffer that contains formatted result (same sb).
 	 */
-	public StringBuffer printArticle(final StringBuffer sb, final Article a);
+	public StringBuffer printArticle(StringBuffer sb, Article article);
 
 
 	/**
@@ -85,7 +84,7 @@ public interface Printer {
 	 * @param articles collection of Articles (null argument is ignored).
 	 * @return StringBuffer that contains formatted result (same sb).
 	 */
-	public StringBuffer printArticles(final StringBuffer sb, final Collection<Article> articles);
+	public StringBuffer printArticles(StringBuffer sb, Collection<Article> articles);
 
 
 	/**
@@ -99,7 +98,7 @@ public interface Printer {
 	 * @param order Order object
 	 * @return StringBuffer that contains formatted result (same sb).
 	 */
-	public StringBuffer printOrder(final StringBuffer sb, final Order order);
+	public StringBuffer printOrder(StringBuffer sb, Order order);
 
 
 	/**
@@ -116,7 +115,7 @@ public interface Printer {
 	 * @param orders collection of Orders (null argument is ignored).
 	 * @return StringBuffer that contains formatted result (same sb).
 	 */
-	public StringBuffer printOrders(final StringBuffer sb, final Collection<Order> orders);
+	public StringBuffer printOrders(StringBuffer sb, Collection<Order> orders);
 
 
 	/**
@@ -138,7 +137,7 @@ public interface Printer {
 	 * @param order order printed into {@code orderTable}, (null argument is ignored).
 	 * @return {@link TablePrinter} that contains formatted result.
 	 */
-	public TablePrinter printOrder(final TablePrinter orderTable, final Order order);
+	public TablePrinter printOrder(TablePrinter orderTable, Order order);
 
 
 	/**
@@ -166,6 +165,6 @@ public interface Printer {
 	 * @param orders collection of orders printed into {@code orderTable}, (null argument is ignored).
 	 * @return {@link TablePrinter} that contains formatted result.
 	 */
-	public TablePrinter printOrders(final TablePrinter orderTable, final Collection<Order> orders);
+	public TablePrinter printOrders(TablePrinter orderTable, Collection<Order> orders);
 
 }
