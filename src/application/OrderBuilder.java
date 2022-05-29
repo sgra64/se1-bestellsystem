@@ -5,6 +5,13 @@ import datamodel.Customer;
 import datamodel.TAX;
 
 
+/**
+ * OrderBuilder builds sample orders using objects from the {@link datamodel} package.
+ * 
+ * @version <code style=color:green>{@value application.package_info#Version}</code>
+ * @author <code style=color:blue>{@value application.package_info#Author}</code>
+ */
+
 public class OrderBuilder {
 
 	/**
