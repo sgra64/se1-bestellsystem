@@ -1,0 +1,10 @@
+
+# cat resources/tar-handouts_F1.txt | tr -d '\015' | bash
+
+tar cvf handouts_F1.tar \
+  src/system \
+  src/module-info.java \
+  src/application/Application_F1.java \
+  src/application/DatamodelFactory.java \
+  src/application/OrderBuilder.java \
+  resources/jdoc-options.opt
