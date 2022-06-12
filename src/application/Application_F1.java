@@ -55,8 +55,8 @@ public class Application_F1 {
 		;
 		//
 		System.out.println("(" + factory.customersCount() + ") Customer objects built.");
-		System.out.println("(" + factory.ordersCount() + ") Article objects built.");
-		System.out.println("(" + factory.articlesCount() + ") Order objects built.");
+		System.out.println("(" + factory.articlesCount() + ") Article objects built.");
+		System.out.println("(" + factory.ordersCount() + ") Order objects built.");
 
 		StringBuffer sb = new StringBuffer();
 		//
