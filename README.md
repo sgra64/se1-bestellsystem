@@ -3,6 +3,7 @@
 1. [Create Class *Customer*](#1-create-class-customer)
 1. [Create Driver for Class *Customer*](#2-create-driver-for-class-customer)
 1. [Create Javadoc for Class *Customer*](#3-create-javadoc-for-class-customer)
+1. [Commit and Push Changes](#4-commit-and-push-changes)
 
 
 &nbsp;
@@ -187,6 +188,7 @@ Output:
  - customer id: 286516, name: Schulz-Mueller, Tim, contacts: [tim2346@gmx.de]
 ```
 
+
 &nbsp;
 
 ## 3. Create Javadoc for Class *Customer*
@@ -212,7 +214,35 @@ Create this file with following content:
 package datamodel;
 ```
 
+Furthermore, package `datamodel` must be exported in `module-info.java` such
+that Javadoc creates pages for datamodel classes.
 
-The final Javadoc page should look like:
+```java
+module se1.bestellsystem {
+    opens application;      // open: package is accessible by JavaVM at runtime
+    exports application;    // export: package is accessible to compile other modules
+    opens datamodel;        // open: package is accessible by JavaVM at runtime
+    exports datamodel;      // export: package is accessible to compile other modules
+    ...
+}
+```
+
+The final Javadoc page should look like
+[*Customer Javadoc*](https://sgra64.github.io/se1.bestellsystem/D12-Datamodel/javadoc/se1.bestellsystem/datamodel/Customer.html):
 
 <img src="https://raw.githubusercontent.com/sgra64/se1-bestellsystem/refs/heads/markup/c2-customer/Customer_Javadoc.png" alt="drawing" width="600"/>
+
+
+&nbsp;
+
+## 4. Commit and Push Changes
+
+Commit changes you made to the project and push to your remote repository:
+
+```sh
+git status                      # show changed files
+git add .                       # stage changes for commit
+git commit -m "add package datamodel with class Customer.java"
+
+git push                        # push commit to your upstream remote repository
+```
