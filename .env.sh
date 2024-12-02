@@ -521,8 +521,8 @@ function coverage_report() {
             echo "--> define variable: \$analyze_classes, e.g. with:"
             echo "  analyze_classes=("
                 local cld="${P[classes]}"
-                [ -d "$cld/datamodel" ] && [ $(ls "$cld/datamodel") ] && cld+="/datamodel"
-                find "$cld" -type f | sed -e '/\$.*.class/d' -e '/info/d' \
+                # drop application package from coverage
+                find "$cld" -type f | sed -e "/\/application\//d" -e '/\$.*.class/d' -e '/info/d' \
                     -e '/application\/Runtime/d' -e 's/^.*$/    --classfiles .\/&/'
             echo "  )"
         else
