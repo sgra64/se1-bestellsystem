@@ -32,7 +32,8 @@ public class Application implements Runner {
     public static void main(String[] args) {
         // 
         // execute this application
-        application.execute(application, args);
+        Runner application_c12 = new Application_C12();
+        application.execute(application_c12, args);
     }
 
     /**
